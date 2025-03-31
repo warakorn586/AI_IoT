@@ -1,0 +1,28 @@
+from sklearn.linear_model import LogisticRegression
+
+# Initialize the model
+model = LogisticRegression()
+
+# Define the training data (features and labels)
+x = [[8, 6], [3, 5], [4, 9], [5, 8], [9, 9]]  # Feature matrix
+y = ['yes', 'no', 'no', 'yes', 'yes']  # Labels
+
+# Fit the model
+model.fit(x, y)
+
+# Predict for new data points
+x_predict = [[4, 4], [5, 5]]
+y_predict = model.predict(x_predict)
+
+# Print predictions
+print('For x = [4, 4], y =', y_predict[0])
+print('For x = [5, 5], y =', y_predict[1])
+
+# Print probabilities
+print("\nProbabilities:")
+prob = model.predict_proba(x_predict)
+print(prob)
+
+
+
+
